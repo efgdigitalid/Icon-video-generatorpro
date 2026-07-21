@@ -816,8 +816,128 @@
       c.beginPath(); c.moveTo(0,-25); c.quadraticCurveTo(-19,-37,-34,-22); c.lineTo(-34,25); c.quadraticCurveTo(-17,15,0,29); c.quadraticCurveTo(17,15,34,25); c.lineTo(34,-22); c.quadraticCurveTo(19,-37,0,-25); c.closePath(); c.fill(); c.strokeStyle=a; c.lineWidth=4; c.beginPath(); c.moveTo(0,-25); c.lineTo(0,29); c.stroke();
     } else if (name.includes('pin') || name.includes('location')) {
       c.beginPath(); c.arc(0,-10,23,0,Math.PI*2); c.fill(); c.beginPath(); c.moveTo(-17,6); c.quadraticCurveTo(0,39,17,6); c.closePath(); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(0,-10,8,0,Math.PI*2); c.fill();
+    } else if (name.includes('wifi') || name.includes('signal') || name.includes('hotspot')) {
+      c.lineWidth=8; c.lineCap='round';
+      c.beginPath(); c.arc(0,10,34,Math.PI*1.25,Math.PI*1.75); c.stroke();
+      c.beginPath(); c.arc(0,10,22,Math.PI*1.25,Math.PI*1.75); c.stroke();
+      c.beginPath(); c.arc(0,10,10,Math.PI*1.25,Math.PI*1.75); c.stroke();
+      c.beginPath(); c.arc(0,10,3,0,Math.PI*2); c.fill();
+    } else if (name.includes('bluetooth')) {
+      c.lineWidth=8; c.beginPath(); c.moveTo(-14,-22); c.lineTo(16,-6); c.lineTo(-14,10); c.lineTo(-14,-22); c.moveTo(-14,22); c.lineTo(16,6); c.lineTo(-14,-10); c.stroke();
+    } else if (name.includes('phone') || name.includes('call')) {
+      c.beginPath(); c.moveTo(-24,-28); c.quadraticCurveTo(-30,-32,-22,-16); c.quadraticCurveTo(-6,10,18,26); c.quadraticCurveTo(30,30,26,20); c.lineTo(18,10); c.lineTo(8,16); c.quadraticCurveTo(-4,6,-12,-8); c.lineTo(-6,-18); c.closePath(); c.fill();
+    } else if (name.includes('mail') || name.includes('email') || name.includes('envelope')) {
+      roundRectPath(c,-32,-20,64,40,4); c.fill(); c.strokeStyle=a; c.lineWidth=5; c.beginPath(); c.moveTo(-32,-20); c.lineTo(0,6); c.lineTo(32,-20); c.stroke();
+    } else if (name.includes('airplane') || name.includes('plane') || name.includes('flight') || name.includes('travel')) {
+      c.rotate(-0.35); c.beginPath(); c.moveTo(-34,4); c.lineTo(-4,-2); c.lineTo(6,-30); c.lineTo(16,-30); c.lineTo(12,0); c.lineTo(30,4); c.lineTo(30,12); c.lineTo(10,10); c.lineTo(4,26); c.lineTo(14,32); c.lineTo(14,38); c.lineTo(0,34); c.lineTo(-14,38); c.lineTo(-14,32); c.lineTo(-4,26); c.lineTo(-10,10); c.lineTo(-34,12); c.closePath(); c.fill();
+    } else if (name.includes('camera')) {
+      roundRectPath(c,-34,-16,68,44,8); c.fill(); c.fillStyle=a; roundRectPath(c,-12,-24,24,12,4); c.fill(); c.fillStyle=light; c.beginPath(); c.arc(0,6,15,0,Math.PI*2); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(0,6,8,0,Math.PI*2); c.fill();
+    } else if (name.includes('briefcase') || name.includes('portfolio') || name.includes('office') || name.includes('work')) {
+      roundRectPath(c,-32,-14,64,42,6); c.fill(); c.fillStyle=a; c.fillRect(-32,4,64,4); c.fillStyle=light; roundRectPath(c,-14,-26,28,14,4); c.fill(); c.fillStyle=a; roundRectPath(c,-10,-22,20,6,2); c.fill();
+    } else if (name.includes('calendar') || name.includes('date') || name.includes('planner')) {
+      roundRectPath(c,-30,-24,60,52,6); c.fill(); c.fillStyle=a; c.fillRect(-30,-10,60,4); c.fillStyle=light; for(let r=0;r<2;r++)for(let col=0;col<4;col++){ c.fillRect(-24+col*13,0+r*11,8,7);} c.fillStyle=a; c.fillRect(-20,-30,6,12); c.fillRect(14,-30,6,12);
+    } else if (name.includes('document') || name.includes('paper') || name.includes('contract') || name.includes('invoice') || name.includes('receipt')) {
+      c.beginPath(); c.moveTo(-24,-32); c.lineTo(14,-32); c.lineTo(28,-18); c.lineTo(28,32); c.lineTo(-24,32); c.closePath(); c.fill(); c.strokeStyle=a; c.lineWidth=5; c.beginPath(); c.moveTo(-14,-8); c.lineTo(18,-8); c.moveTo(-14,4); c.lineTo(18,4); c.moveTo(-14,16); c.lineTo(8,16); c.stroke();
+    } else if (name.includes('lock') || name.includes('password') || name.includes('vault') || name.includes('safe')) {
+      roundRectPath(c,-22,-4,44,34,6); c.fill(); c.strokeStyle=light; c.lineWidth=8; c.beginPath(); c.arc(0,-6,14,Math.PI,0); c.stroke(); c.fillStyle=a; c.beginPath(); c.arc(0,10,5,0,Math.PI*2); c.fill();
+    } else if (name.includes('key') || name.includes('access')) {
+      c.beginPath(); c.arc(-14,0,14,0,Math.PI*2); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(-14,0,6,0,Math.PI*2); c.fill(); c.fillStyle=light; c.fillRect(-2,-5,32,10); c.fillRect(20,5,6,10); c.fillRect(8,5,6,10);
+    } else if (name.includes('lightbulb') || name.includes('idea') || name.includes('bulb')) {
+      c.beginPath(); c.arc(0,-6,20,0,Math.PI*2); c.fill(); c.fillRect(-10,12,20,8); c.fillStyle=a; c.fillRect(-8,20,16,4); c.fillRect(-6,26,12,4);
+    } else if (name.includes('brain')) {
+      c.beginPath(); c.arc(-10,0,22,0,Math.PI*2); c.arc(10,0,22,0,Math.PI*2); c.fill(); c.strokeStyle=a; c.lineWidth=4; c.beginPath(); c.moveTo(0,-20); c.lineTo(0,20); c.moveTo(-18,-8); c.quadraticCurveTo(-6,-6,-4,4); c.moveTo(18,-8); c.quadraticCurveTo(6,-6,4,4); c.stroke();
+    } else if (name.includes('dna') || name.includes('helix')) {
+      c.lineWidth=6; c.beginPath(); for(let i=-3;i<=3;i++){ const y=i*8; c.moveTo(-16,y); c.lineTo(16,y);} c.stroke(); c.beginPath(); c.moveTo(-18,-30); c.bezierCurveTo(22,-15,-22,15,18,30); c.moveTo(18,-30); c.bezierCurveTo(-22,-15,22,15,-18,30); c.stroke();
+    } else if (name.includes('pill') || name.includes('capsule')) {
+      c.rotate(-Math.PI/4); roundRectPath(c,-32,-12,64,24,12); c.fill(); c.fillStyle=a; roundRectPath(c,0,-12,32,24,12); c.fill();
+    } else if (name.includes('syringe') || name.includes('vaccine') || name.includes('injection')) {
+      c.rotate(-Math.PI/4); c.fillRect(-20,-6,40,12); c.fillStyle=a; c.fillRect(20,-4,14,8); c.fillStyle=light; c.beginPath(); c.moveTo(34,0); c.lineTo(46,0); c.lineTo(42,-3); c.moveTo(46,0); c.lineTo(42,3); c.strokeStyle=light; c.lineWidth=4; c.stroke(); c.fillRect(-28,-10,8,20);
+    } else if (name.includes('dumbbell') || name.includes('fitness') || name.includes('gym')) {
+      c.fillRect(-6,-10,12,20); c.fillRect(-22,-18,10,36); c.fillRect(12,-18,10,36); c.fillRect(-32,-10,10,20); c.fillRect(22,-10,10,20);
+    } else if (name.includes('umbrella')) {
+      c.beginPath(); c.arc(0,4,34,Math.PI,0); c.closePath(); c.fill(); c.strokeStyle=a; c.lineWidth=4; c.beginPath(); c.moveTo(-22,4); c.quadraticCurveTo(-11,-8,0,4); c.quadraticCurveTo(11,-8,22,4); c.stroke(); c.strokeStyle=light; c.lineWidth=5; c.beginPath(); c.moveTo(0,4); c.lineTo(0,28); c.quadraticCurveTo(0,36,-8,36); c.stroke();
+    } else if (name.includes('map') || name.includes('globe') || name.includes('earth') || name.includes('planet') || name.includes('world')) {
+      c.beginPath(); c.arc(0,0,34,0,Math.PI*2); c.fill(); c.strokeStyle=a; c.lineWidth=4; c.beginPath(); c.moveTo(-34,0); c.lineTo(34,0); c.moveTo(0,-34); c.lineTo(0,34); c.ellipse(0,0,16,34,0,0,Math.PI*2); c.ellipse(0,0,34,16,0,0,Math.PI*2); c.stroke();
+    } else if (name.includes('compass') || name.includes('navigation')) {
+      c.beginPath(); c.arc(0,0,34,0,Math.PI*2); c.fill(); c.fillStyle=a; c.beginPath(); c.moveTo(0,-22); c.lineTo(8,0); c.lineTo(0,22); c.lineTo(-8,0); c.closePath(); c.fill(); c.fillStyle=light; c.beginPath(); c.arc(0,0,4,0,Math.PI*2); c.fill();
+    } else if (name.includes('ticket') || name.includes('pass')) {
+      c.beginPath(); c.moveTo(-34,-16); c.lineTo(-34,-8); c.arc(-34,0,8,-Math.PI/2,Math.PI/2); c.lineTo(-34,16); c.lineTo(34,16); c.lineTo(34,8); c.arc(34,0,8,Math.PI/2,-Math.PI/2); c.lineTo(34,-16); c.closePath(); c.fill(); c.strokeStyle=a; c.lineWidth=3; c.setLineDash([4,4]); c.beginPath(); c.moveTo(0,-16); c.lineTo(0,16); c.stroke(); c.setLineDash([]);
+    } else if (name.includes('building') || name.includes('tower') || name.includes('city') || name.includes('bank') || name.includes('hospital') || name.includes('school')) {
+      c.fillRect(-28,-30,56,60); c.fillStyle=a; for(let r=0;r<3;r++)for(let cc=0;cc<3;cc++){ c.fillRect(-22+cc*16,-24+r*16,10,10);} c.fillStyle=light; c.fillRect(-8,14,16,16);
+    } else if (name.includes('music') || name.includes('note') || name.includes('audio') || name.includes('song')) {
+      c.beginPath(); c.arc(-14,20,10,0,Math.PI*2); c.fill(); c.beginPath(); c.arc(18,14,10,0,Math.PI*2); c.fill(); c.fillRect(-6,-24,4,44); c.fillRect(24,-30,4,44); c.beginPath(); c.moveTo(-6,-24); c.lineTo(28,-30); c.lineTo(28,-18); c.lineTo(-6,-12); c.closePath(); c.fill();
+    } else if (name.includes('mic') || name.includes('podcast') || name.includes('voice')) {
+      roundRectPath(c,-12,-30,24,44,12); c.fill(); c.strokeStyle=light; c.lineWidth=5; c.beginPath(); c.arc(0,10,20,0,Math.PI); c.stroke(); c.beginPath(); c.moveTo(0,30); c.lineTo(0,38); c.moveTo(-10,38); c.lineTo(10,38); c.stroke();
+    } else if (name.includes('bell') || name.includes('notification') || name.includes('alert')) {
+      c.beginPath(); c.moveTo(-24,14); c.quadraticCurveTo(-22,-24,0,-28); c.quadraticCurveTo(22,-24,24,14); c.closePath(); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(0,22,6,0,Math.PI*2); c.fill();
+    } else if (name.includes('thumb') || name.includes('like')) {
+      c.beginPath(); c.moveTo(-22,32); c.lineTo(-22,-2); c.lineTo(-8,-2); c.lineTo(-2,-18); c.quadraticCurveTo(4,-32,10,-24); c.quadraticCurveTo(12,-16,6,-2); c.lineTo(22,-2); c.quadraticCurveTo(28,-2,26,6); c.lineTo(22,26); c.quadraticCurveTo(20,32,12,32); c.closePath(); c.fill();
+    } else if (name.includes('bubble') || name.includes('chat') || name.includes('comment') || name.includes('message')) {
+      c.beginPath(); c.moveTo(-30,-20); c.quadraticCurveTo(-34,-30,-20,-30); c.lineTo(20,-30); c.quadraticCurveTo(34,-30,34,-16); c.lineTo(34,8); c.quadraticCurveTo(34,20,20,20); c.lineTo(-8,20); c.lineTo(-22,30); c.lineTo(-20,20); c.quadraticCurveTo(-34,20,-34,6); c.closePath(); c.fill();
+    } else if (name.includes('hashtag') || name.includes('tag')) {
+      c.lineWidth=8; c.beginPath(); c.moveTo(-8,-30); c.lineTo(-16,30); c.moveTo(16,-30); c.lineTo(8,30); c.moveTo(-28,-8); c.lineTo(30,-8); c.moveTo(-32,12); c.lineTo(26,12); c.stroke();
+    } else if (name.includes('palette') || name.includes('art') || name.includes('paint')) {
+      c.beginPath(); c.moveTo(-30,10); c.quadraticCurveTo(-38,-30,0,-32); c.quadraticCurveTo(38,-32,32,4); c.quadraticCurveTo(28,20,12,18); c.quadraticCurveTo(2,16,4,26); c.quadraticCurveTo(6,34,-8,34); c.quadraticCurveTo(-30,32,-30,10); c.closePath(); c.fill(); c.fillStyle=a; ['-16,-14','8,-18','20,-4','-4,-20'].forEach(s=>{ const [x,y]=s.split(',').map(Number); c.beginPath(); c.arc(x,y,4,0,Math.PI*2); c.fill(); });
+    } else if (name.includes('flask') || name.includes('lab') || name.includes('chemistry') || name.includes('science')) {
+      c.beginPath(); c.moveTo(-8,-30); c.lineTo(-8,-6); c.lineTo(-24,26); c.quadraticCurveTo(-30,36,-14,36); c.lineTo(14,36); c.quadraticCurveTo(30,36,24,26); c.lineTo(8,-6); c.lineTo(8,-30); c.closePath(); c.fill(); c.fillStyle=a; c.fillRect(-14,-32,28,4);
+    } else if (name.includes('atom')) {
+      c.beginPath(); c.arc(0,0,4,0,Math.PI*2); c.fill(); c.strokeStyle=light; c.lineWidth=4; for(const ang of [0,Math.PI/3,-Math.PI/3]){ c.save(); c.rotate(ang); c.beginPath(); c.ellipse(0,0,32,12,0,0,Math.PI*2); c.stroke(); c.restore(); }
+    } else if (name.includes('pencil') || name.includes('write') || name.includes('edit')) {
+      c.rotate(-Math.PI/4); c.fillRect(-30,-6,44,12); c.fillStyle=a; c.beginPath(); c.moveTo(14,-6); c.lineTo(28,0); c.lineTo(14,6); c.closePath(); c.fill(); c.fillStyle=light; c.fillRect(-36,-6,6,12);
+    } else if (name.includes('drop') || name.includes('water') || name.includes('rain')) {
+      c.beginPath(); c.moveTo(0,-32); c.bezierCurveTo(22,-8,22,24,0,32); c.bezierCurveTo(-22,24,-22,-8,0,-32); c.closePath(); c.fill();
+    } else if (name.includes('snow') || name.includes('crystal')) {
+      c.lineWidth=6; c.lineCap='round'; for(let i=0;i<6;i++){ c.save(); c.rotate(i*Math.PI/3); c.beginPath(); c.moveTo(0,-32); c.lineTo(0,32); c.moveTo(0,-32); c.lineTo(-6,-26); c.moveTo(0,-32); c.lineTo(6,-26); c.moveTo(0,32); c.lineTo(-6,26); c.moveTo(0,32); c.lineTo(6,26); c.stroke(); c.restore(); }
+    } else if (name.includes('mountain') || name.includes('peak') || name.includes('hiking')) {
+      c.beginPath(); c.moveTo(-34,26); c.lineTo(-8,-10); c.lineTo(4,8); c.lineTo(16,-6); c.lineTo(34,26); c.closePath(); c.fill(); c.fillStyle=a; c.beginPath(); c.moveTo(-14,-1); c.lineTo(-8,-10); c.lineTo(-2,-1); c.closePath(); c.fill();
+    } else if (name.includes('tent') || name.includes('camp')) {
+      c.beginPath(); c.moveTo(-34,28); c.lineTo(0,-30); c.lineTo(34,28); c.closePath(); c.fill(); c.fillStyle=a; c.beginPath(); c.moveTo(-10,28); c.lineTo(0,4); c.lineTo(10,28); c.closePath(); c.fill();
+    } else if (name.includes('car') || name.includes('auto') || name.includes('vehicle')) {
+      roundRectPath(c,-32,-4,64,20,8); c.fill(); c.beginPath(); c.moveTo(-24,-4); c.lineTo(-16,-18); c.lineTo(16,-18); c.lineTo(24,-4); c.closePath(); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(-18,18,7,0,Math.PI*2); c.arc(18,18,7,0,Math.PI*2); c.fill();
+    } else if (name.includes('ship') || name.includes('boat') || name.includes('cruise') || name.includes('surf')) {
+      c.beginPath(); c.moveTo(-32,4); c.lineTo(32,4); c.lineTo(24,22); c.lineTo(-24,22); c.closePath(); c.fill(); c.fillRect(-2,-30,4,32); c.beginPath(); c.moveTo(2,-28); c.lineTo(22,-4); c.lineTo(2,-4); c.closePath(); c.fill(); c.beginPath(); c.moveTo(-2,-24); c.lineTo(-20,-4); c.lineTo(-2,-4); c.closePath(); c.fill();
+    } else if (name.includes('train') || name.includes('route')) {
+      roundRectPath(c,-28,-24,56,44,8); c.fill(); c.fillStyle=a; c.fillRect(-22,-16,20,12); c.fillRect(2,-16,20,12); c.fillStyle=light; c.beginPath(); c.arc(-14,24,6,0,Math.PI*2); c.arc(14,24,6,0,Math.PI*2); c.fill();
+    } else if (name.includes('bag') || name.includes('shopping') || name.includes('basket')) {
+      c.beginPath(); c.moveTo(-26,-8); c.lineTo(-30,30); c.lineTo(30,30); c.lineTo(26,-8); c.closePath(); c.fill(); c.strokeStyle=a; c.lineWidth=5; c.beginPath(); c.arc(0,-8,14,Math.PI,0); c.stroke();
+    } else if (name.includes('card')) {
+      roundRectPath(c,-34,-20,68,40,6); c.fill(); c.fillStyle=a; c.fillRect(-34,-10,68,8); c.fillStyle=light; c.fillRect(-26,6,22,4); c.fillRect(-26,14,14,4);
+    } else if (name.includes('calculator') || name.includes('math')) {
+      roundRectPath(c,-24,-30,48,60,6); c.fill(); c.fillStyle=a; c.fillRect(-18,-24,36,12); c.fillStyle=light; for(let r=0;r<3;r++)for(let cc=0;cc<3;cc++){ c.fillRect(-18+cc*13,-4+r*11,9,7);}
+    } else if (name.includes('pie')) {
+      c.beginPath(); c.arc(0,0,32,0,Math.PI*2); c.fill(); c.fillStyle=a; c.beginPath(); c.moveTo(0,0); c.arc(0,0,32,-Math.PI/2,Math.PI/6); c.closePath(); c.fill();
+    } else if (name.includes('cube') || name.includes('box') || name.includes('package') || name.includes('block')) {
+      c.beginPath(); c.moveTo(0,-30); c.lineTo(30,-14); c.lineTo(30,18); c.lineTo(0,34); c.lineTo(-30,18); c.lineTo(-30,-14); c.closePath(); c.fill(); c.strokeStyle=a; c.lineWidth=4; c.beginPath(); c.moveTo(0,-30); c.lineTo(0,2); c.moveTo(0,2); c.lineTo(30,-14); c.moveTo(0,2); c.lineTo(-30,-14); c.stroke();
+    } else if (name.includes('search') || name.includes('lens') || name.includes('magnif')) {
+      c.lineWidth=8; c.beginPath(); c.arc(-6,-6,20,0,Math.PI*2); c.stroke(); c.beginPath(); c.moveTo(10,10); c.lineTo(28,28); c.lineWidth=10; c.stroke();
+    } else if (name.includes('apple') || name.includes('fruit')) {
+      c.beginPath(); c.arc(-10,4,22,0,Math.PI*2); c.arc(10,4,22,0,Math.PI*2); c.fill(); c.strokeStyle=a; c.lineWidth=5; c.lineCap='round'; c.beginPath(); c.moveTo(0,-18); c.quadraticCurveTo(4,-30,16,-30); c.stroke();
+    } else if (name.includes('burger') || name.includes('sandwich')) {
+      c.beginPath(); c.arc(0,-10,28,Math.PI,0); c.closePath(); c.fill(); c.fillStyle=a; c.fillRect(-28,-10,56,6); c.fillStyle=light; c.fillRect(-28,-2,56,8); c.fillStyle=a; c.fillRect(-28,8,56,4); c.fillStyle=light; c.beginPath(); c.moveTo(-28,14); c.quadraticCurveTo(0,30,28,14); c.lineTo(28,10); c.lineTo(-28,10); c.closePath(); c.fill();
+    } else if (name.includes('pizza')) {
+      c.beginPath(); c.moveTo(0,-32); c.lineTo(32,26); c.lineTo(-32,26); c.closePath(); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(-4,4,4,0,Math.PI*2); c.arc(8,-6,4,0,Math.PI*2); c.arc(0,16,4,0,Math.PI*2); c.fill();
+    } else if (name.includes('cake') || name.includes('dessert') || name.includes('donut')) {
+      roundRectPath(c,-26,-2,52,26,4); c.fill(); c.fillStyle=a; c.beginPath(); c.moveTo(-26,-2); c.quadraticCurveTo(-13,-14,0,-2); c.quadraticCurveTo(13,-14,26,-2); c.stroke(); c.strokeStyle=light; c.lineWidth=4; c.beginPath(); c.moveTo(0,-24); c.lineTo(0,-4); c.stroke(); c.beginPath(); c.arc(0,-28,3,0,Math.PI*2); c.fill();
+    } else if (name.includes('bottle') || name.includes('jar')) {
+      c.fillRect(-6,-32,12,10); roundRectPath(c,-16,-22,32,54,10); c.fill(); c.fillStyle=a; c.fillRect(-16,-6,32,6);
+    } else if (name.includes('flag') || name.includes('badge') || name.includes('brand')) {
+      c.fillRect(-4,-32,4,64); c.beginPath(); c.moveTo(0,-30); c.lineTo(30,-24); c.lineTo(22,-14); c.lineTo(30,-4); c.lineTo(0,-8); c.closePath(); c.fill();
+    } else if (name.includes('smile') || name.includes('face') || name.includes('emoji')) {
+      c.beginPath(); c.arc(0,0,34,0,Math.PI*2); c.fill(); c.fillStyle=a; c.beginPath(); c.arc(-10,-6,4,0,Math.PI*2); c.arc(10,-6,4,0,Math.PI*2); c.fill(); c.strokeStyle=a; c.lineWidth=5; c.beginPath(); c.arc(0,4,14,0.15,Math.PI-0.15); c.stroke();
+    } else if (name.includes('bookmark') || name.includes('ribbon')) {
+      c.beginPath(); c.moveTo(-20,-30); c.lineTo(20,-30); c.lineTo(20,32); c.lineTo(0,18); c.lineTo(-20,32); c.closePath(); c.fill();
+    } else if (name.includes('arrow') || name.includes('upload') || name.includes('growth')) {
+      c.lineWidth=10; c.lineCap='round'; c.beginPath(); c.moveTo(0,28); c.lineTo(0,-24); c.moveTo(-18,-8); c.lineTo(0,-28); c.lineTo(18,-8); c.stroke();
+    } else if (name.includes('download')) {
+      c.lineWidth=10; c.lineCap='round'; c.beginPath(); c.moveTo(0,-24); c.lineTo(0,20); c.moveTo(-18,4); c.lineTo(0,24); c.lineTo(18,4); c.stroke(); c.fillRect(-24,26,48,6);
+    } else if (name.includes('gift')) {
+      c.fillRect(-30,-4,60,32); c.fillStyle=a; c.fillRect(-4,-4,8,32); c.fillStyle=light; c.fillRect(-32,-10,64,10); c.fillStyle=a; c.fillRect(-4,-10,8,10); c.beginPath(); c.moveTo(0,-10); c.quadraticCurveTo(-24,-20,-12,-28); c.quadraticCurveTo(-2,-30,0,-14); c.quadraticCurveTo(2,-30,12,-28); c.quadraticCurveTo(24,-20,0,-10); c.fill();
+    } else if (name.includes('handshake') || name.includes('deal')) {
+      c.lineWidth=8; c.lineCap='round'; c.beginPath(); c.moveTo(-32,4); c.lineTo(-8,-8); c.lineTo(8,4); c.lineTo(32,-8); c.stroke(); c.beginPath(); c.moveTo(-20,10); c.lineTo(0,22); c.lineTo(20,10); c.stroke();
     } else {
-      c.lineWidth=7; c.beginPath(); c.arc(0,0,26,0,Math.PI*2); c.stroke(); c.beginPath(); c.moveTo(-19,15); c.quadraticCurveTo(-3,-23,22,-11); c.moveTo(-17,-11); c.quadraticCurveTo(3,22,25,8); c.stroke(); c.beginPath(); c.arc(0,0,7,0,Math.PI*2); c.fill();
+      // Generic clean mark: bold ring with abstract 3-dot cluster (no fish/eye squiggle).
+      c.lineWidth=8; c.beginPath(); c.arc(0,0,28,0,Math.PI*2); c.stroke();
+      c.beginPath(); c.arc(-10,-6,5,0,Math.PI*2); c.arc(10,-6,5,0,Math.PI*2); c.arc(0,10,5,0,Math.PI*2); c.fill();
     }
     c.restore();
   }
