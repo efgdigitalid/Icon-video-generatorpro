@@ -754,7 +754,6 @@
     else if (badge === 1) { roundRectPath(c,-43,-43,86,86,22); c.fill(); }
     else if (badge === 2) { starPath(c,8,45,35); c.fill(); }
     else { c.beginPath(); for(let i=0;i<6;i++){ const ang=-Math.PI/2+i*Math.PI/3; const px=Math.cos(ang)*45, py=Math.sin(ang)*45; i?c.lineTo(px,py):c.moveTo(px,py);} c.closePath(); c.fill(); }
-    c.globalAlpha=.20; c.fillStyle='#fff'; c.beginPath(); c.arc(-16,-18,26,0,Math.PI*2); c.fill(); c.globalAlpha=1;
     c.strokeStyle = light; c.fillStyle = light; c.lineWidth = 8; c.lineCap='round'; c.lineJoin='round';
 
     if (name.includes('rocket') || name.includes('launch') || name.includes('startup')) {
